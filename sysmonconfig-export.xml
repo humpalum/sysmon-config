@@ -75,7 +75,7 @@
 			code signatures to validate, but Sysmon does not support that. Look into AppLocker/WindowsDeviceGuard for whitelisting support. -->
 
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine, RuleName-->
-	<RuleGroup name="" groupRelation="or">
+	<RuleGroup name="" groupRelation="or"
 		<ProcessCreate onmatch="exclude">
 			<ParentCommandLine condition="is">"C:\Program Files\Microsoft Monitoring Agent\Agent\MonitoringHost.exe" -Embedding</ParentCommandLine> <!-- SECTION: Azure OMS/MMA Agent -->
 			<CommandLine condition="contains">\Machine\Scripts\Startup\ipamprovisioning.ps1</CommandLine> <!-- Windows IP Address Management (IPAM) -->
